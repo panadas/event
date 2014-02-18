@@ -11,19 +11,13 @@ class Subscribers extends ArrayList
     protected function filter(&$item)
     {
         if (is_callable($item)) {
-
             $item = [
                 "callback" => $item
             ];
-
         } elseif (!is_array($item)) {
-
             return;
-
         } elseif (!array_key_exists("callback", $item)) {
-
             $item["callback"] = null;
-
         }
 
         if (!array_key_exists("priority", $item)) {
