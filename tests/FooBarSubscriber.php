@@ -1,5 +1,5 @@
 <?php
-namespace Panadas\EventModule;
+namespace Panadas\Event;
 
 class FooBarSubscriber
 {

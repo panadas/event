@@ -1,7 +1,7 @@
 <?php
-namespace Panadas\EventModule\DataStructure;
+namespace Panadas\Event\DataStructure;
 
-use Panadas\DataStructureModule\ArrayList;
+use Panadas\DataStructure\ArrayList;
 
 class Subscribers extends ArrayList
 {

@@ -1,5 +1,5 @@
 {
-    "name": "panadas/module-event",
+    "name": "panadas/event",
     "description": "Publish and subscribe to events.",
     "license": "MIT",
     "type": "library",
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "panadas/module-data-structure": "~1.0",
+        "panadas/data-structure": "~1.0",
         "panadas/util": "~1.0"
     },
     "require-dev": {
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "Panadas\\EventModule\\": "src/"
+            "Panadas\\Event\\": "src/"
         }
     },
     "minimum-stability": "dev",

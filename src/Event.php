@@ -1,7 +1,7 @@
 <?php
-namespace Panadas\EventModule;
+namespace Panadas\Event;
 
-use Panadas\EventModule\DataStructure\EventParams;
+use Panadas\Event\DataStructure\EventParams;
 
 class Event
 {

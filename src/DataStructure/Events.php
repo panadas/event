@@ -1,7 +1,7 @@
 <?php
-namespace Panadas\EventModule\DataStructure;
+namespace Panadas\Event\DataStructure;
 
-use Panadas\DataStructureModule\Hash;
+use Panadas\DataStructure\Hash;
 
 class Events extends Hash
 {

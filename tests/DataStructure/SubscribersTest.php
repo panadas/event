@@ -1,14 +1,14 @@
 <?php
-namespace Panadas\EventModule\DataStructure;
+namespace Panadas\Event\DataStructure;
 
-use Panadas\EventModule\DataStructure\Subscribers;
-use Panadas\EventModule\Event;
+use Panadas\Event\DataStructure\Subscribers;
+use Panadas\Event\Event;
 
 class SubscribersTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Panadas\EventModule\DataStructure\Subscribers::create()
+     * @covers Panadas\Event\DataStructure\Subscribers::create()
      */
     public function testCreate()
     {
@@ -28,7 +28,7 @@ class SubscribersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\DataStructure\Subscribers::filter()
+     * @covers Panadas\Event\DataStructure\Subscribers::filter()
      */
     public function testFilter()
     {
@@ -41,7 +41,7 @@ class SubscribersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\DataStructure\Subscribers::filter()
+     * @covers Panadas\Event\DataStructure\Subscribers::filter()
      * @expectedException InvalidArgumentException
      */
     public function testFilterInvalidSubscriber()
@@ -51,8 +51,8 @@ class SubscribersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\DataStructure\Subscribers::sort()
-     * @covers Panadas\EventModule\DataStructure\Subscribers::usortPriority()
+     * @covers Panadas\Event\DataStructure\Subscribers::sort()
+     * @covers Panadas\Event\DataStructure\Subscribers::usortPriority()
      */
     public function testSort()
     {

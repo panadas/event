@@ -1,26 +1,26 @@
 <?php
-namespace Panadas\EventModule;
+namespace Panadas\Event;
 
 class PublisherTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Panadas\EventModule\Publisher::__construct()
-     * @covers Panadas\EventModule\Publisher::getEvents()
-     * @covers Panadas\EventModule\Publisher::setEvents()
+     * @covers Panadas\Event\Publisher::__construct()
+     * @covers Panadas\Event\Publisher::getEvents()
+     * @covers Panadas\Event\Publisher::setEvents()
      */
     public function testConstruct()
     {
         $publisher = new Publisher();
 
-        $this->assertInstanceOf("Panadas\EventModule\DataStructure\Events", $publisher->getEvents());
+        $this->assertInstanceOf("Panadas\Event\DataStructure\Events", $publisher->getEvents());
     }
 
     /**
-     * @covers Panadas\EventModule\Publisher::attach()
-     * @covers Panadas\EventModule\Publisher::subscribe()
-     * @covers Panadas\EventModule\Publisher::normalizeSubscriberConfig()
-     * @covers Panadas\EventModule\Publisher::getSubscriberMethodName()
+     * @covers Panadas\Event\Publisher::attach()
+     * @covers Panadas\Event\Publisher::subscribe()
+     * @covers Panadas\Event\Publisher::normalizeSubscriberConfig()
+     * @covers Panadas\Event\Publisher::getSubscriberMethodName()
      */
     public function testAttach()
     {
@@ -36,7 +36,7 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\Publisher::normalizeSubscriberConfig()
+     * @covers Panadas\Event\Publisher::normalizeSubscriberConfig()
      * @dataProvider invalidSubscriberConfigProvider
      * @expectedException InvalidArgumentException
      */
@@ -44,7 +44,7 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
     {
         $publisher = new Publisher();
 
-        $subscriber = $this->getMock("Panadas\EventModule\FooBarSubscriber");
+        $subscriber = $this->getMock("Panadas\Event\FooBarSubscriber");
         $subscriber
             ->expects($this->any())
             ->method("getSubscribedEvents")
@@ -64,10 +64,10 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\Publisher::detach()
-     * @covers Panadas\EventModule\Publisher::unsubscribe()
-     * @covers Panadas\EventModule\Publisher::normalizeSubscriberConfig()
-     * @covers Panadas\EventModule\Publisher::getSubscriberMethodName()
+     * @covers Panadas\Event\Publisher::detach()
+     * @covers Panadas\Event\Publisher::unsubscribe()
+     * @covers Panadas\Event\Publisher::normalizeSubscriberConfig()
+     * @covers Panadas\Event\Publisher::getSubscriberMethodName()
      */
     public function testDetach()
     {
@@ -85,8 +85,8 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\Publisher::detach()
-     * @covers Panadas\EventModule\Publisher::unsubscribe()
+     * @covers Panadas\Event\Publisher::detach()
+     * @covers Panadas\Event\Publisher::unsubscribe()
      */
     public function testDetachUnattached()
     {
@@ -102,7 +102,7 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Panadas\EventModule\Publisher::publish()
+     * @covers Panadas\Event\Publisher::publish()
      */
     public function testPublish()
     {
@@ -113,12 +113,12 @@ class PublisherTest extends \PHPUnit_Framework_TestCase
 
         $event = $publisher->foo();
 
-        $this->assertInstanceOf("Panadas\EventModule\Event", $event);
+        $this->assertInstanceOf("Panadas\Event\Event", $event);
         $this->assertEquals("foo", $event->getParams()->get("foobar"));
 
         $event = $publisher->bar();
 
-        $this->assertInstanceOf("Panadas\EventModule\Event", $event);
+        $this->assertInstanceOf("Panadas\Event\Event", $event);
         $this->assertEquals("bar", $event->getParams()->get("foobar"));
     }
 }
