@@ -4,7 +4,6 @@ namespace Panadas\Event;
 use Panadas\Event\DataStructure\EventParams;
 use Panadas\Event\DataStructure\Events;
 use Panadas\Event\DataStructure\Subscribers;
-use Panadas\Util\String;
 
 class Publisher
 {

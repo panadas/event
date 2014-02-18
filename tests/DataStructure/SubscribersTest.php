@@ -1,7 +1,6 @@
 <?php
 namespace Panadas\Event\DataStructure;
 
-use Panadas\Event\DataStructure\Subscribers;
 use Panadas\Event\Event;
 
 class SubscribersTest extends \PHPUnit_Framework_TestCase
