@@ -1,9 +1,9 @@
 <?php
-namespace Panadas\EventManager;
+namespace Panadas\EventModule;
 
-use Panadas\EventManager\DataStructure\EventParams;
-use Panadas\EventManager\DataStructure\Events;
-use Panadas\EventManager\DataStructure\Subscribers;
+use Panadas\EventModule\DataStructure\EventParams;
+use Panadas\EventModule\DataStructure\Events;
+use Panadas\EventModule\DataStructure\Subscribers;
 use Panadas\Util\String;
 
 class Publisher

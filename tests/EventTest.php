@@ -1,17 +1,17 @@
 <?php
-namespace Panadas\EventManager;
+namespace Panadas\EventModule;
 
 class EventTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Panadas\EventManager\Event::__construct()
-     * @covers Panadas\EventManager\Event::getName()
-     * @covers Panadas\EventManager\Event::setName()
-     * @covers Panadas\EventManager\Event::getPublisher()
-     * @covers Panadas\EventManager\Event::setPublisher()
-     * @covers Panadas\EventManager\Event::getParams()
-     * @covers Panadas\EventManager\Event::setParams()
+     * @covers Panadas\EventModule\Event::__construct()
+     * @covers Panadas\EventModule\Event::getName()
+     * @covers Panadas\EventModule\Event::setName()
+     * @covers Panadas\EventModule\Event::getPublisher()
+     * @covers Panadas\EventModule\Event::setPublisher()
+     * @covers Panadas\EventModule\Event::getParams()
+     * @covers Panadas\EventModule\Event::setParams()
      */
     public function testConstruct()
     {
@@ -22,14 +22,14 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $event = new Event($name, $publisher, $params);
 
         $this->assertEquals($name, $event->getName());
-        $this->assertInstanceOf("Panadas\EventManager\DataStructure\EventParams", $event->getParams());
+        $this->assertInstanceOf("Panadas\EventModule\DataStructure\EventParams", $event->getParams());
         $this->assertSame($publisher, $event->getPublisher());
     }
 
     /**
-     * @covers Panadas\EventManager\Event::stop()
-     * @covers Panadas\EventManager\Event::isStopped()
-     * @covers Panadas\EventManager\Event::setStopped()
+     * @covers Panadas\EventModule\Event::stop()
+     * @covers Panadas\EventModule\Event::isStopped()
+     * @covers Panadas\EventModule\Event::setStopped()
      */
     public function testStop()
     {
